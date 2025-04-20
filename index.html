@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de compra de pasajes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>
+      Bienvenidos a la compra de Pasajes a Capital Federal en Micro partiendo de
+      Zárate o Campana
+    </h1>
+    <p>
+      Les comento un poquito mi idea fue generar un simulador de compra de
+      pasajes de micros con destino a Capital Federal, Bs.As. partiendo desde
+      Zárate o Campana que el usuario elija dónde tomará el micro, el mismo
+      cuenta con de 60 butacas para pasajeros.Hay siete puntos en el
+      recorrido,donde pueden tomarlo y deben seleccionar uno de esos, los puntos
+      son: Hospital de Zárate, Terminal de Zárate, Zárate calle Mitre y Lavalle,
+      Rotonda de Zárate, Siderca en Campana, centro de Campana, Parador la
+      Carmela en Campana. El precio de los pasajes saliendo de Zárate es de
+      $3.500,y el precio de los pasajes partiendo de cualquier punto de Campana
+      es de $2.500. Los horarios de los micros son a las 08:00am , a las 12:00
+      am, a las 16:00pm, a las 20:00pm y a las 00:00 pm. La idea es que cada
+      pasajero al comprar un pasaje pueda elegir el asiento dentro de esos
+      horarios, y que pueda elegir el asiento y si está ocupado, le saldra un
+      cartelito que le indica que elija otro, si no está ocupado le va a indicar
+      al usuario que ingrese el nombre y apellido, dni, número de celular, email
+      y medio de pago, que son tarjeta de credito o tarjeta de débito, una vez
+      que indique una de esas, le consulta al usuario el número de tarjeta,
+      nombre como figura en la tarjeta, fecha de vencimiento y clave de la
+      tarjeta. Una vez que esos datos estén correctos, le saldra otro cartelito
+      que le dice: su pasaje ha sido comprado con éxito, le llegará al email
+      indicado, muchas gracias por su compra! Buen viaje!. Cuando llega a
+      completar 1 micro por horario, le saldra al usuario por pantalla: el
+      horario del micro que desea comprar,no tiene pasajes disponibles, por
+      favor, seleccione otro horario u otra fecha, muchas gracias!. Por
+      ultimo,al finalizar cada día, va a totalizarme (al programador), el número
+      total de pasajes vendidos que salen de Zárate, el número total de pasajes
+      vendidos que salen de Campana, indicando el detalle de asiento
+      seleccionado y los datos de cada pasajero, y en caso que no se hayan
+      vendido los 6o pasajes, totaliza la cantidad de pasajes sin vender. Bueno
+      esa es la idea, se que falta pulirla bastante, gracias por leer, buena
+      semana!saluditos Mel Caffaro.
+    </p>
+    <form id="formulario-compra">
+      <label for="origen">Seleccione su punto de origen:</label>
+      <select id="origen">
+        <option>Hospital de Zárate</option>
+        <option>Terminal de Zárate</option>
+        <option>Zárate calle Mitre y Lavalle</option>
+        <option>Rotonda de Zárate</option>
+        <option>Siderca en Campana</option>
+        <option>Centro de Campana</option>
+        <option>Parador La Carmela en Campana</option>
+      </select>
+
+      <label for="horario">Seleccione horario del micro:</label>
+      <select id="horario">
+        <option>08:00 AM</option>
+        <option>12:00 PM</option>
+        <option>16:00 PM</option>
+        <option>20:00 PM</option>
+        <option>00:00 PM</option>
+      </select>
+
+      <label for="asiento">Seleccione asiento (1-60):</label>
+      <input type="number" id="asiento" min="1" max="60" required />
+
+      <div id="datos-pasajero">
+        <label for="nombre completo">Nombre y apellido:</label>
+        <input type="text" id="nombrecompleto" required />
+        <label for="dni">DNI:</label>
+        <input type="number" id="dni" required />
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+      </div>
+
+      <label for="medio-pago">Seleccione medio de pago:</label>
+      <select id="medio-pago">
+        <option>Tarjeta de crédito</option>
+        <option>Tarjeta de débito</option>
+      </select>
+
+      <button type="submit">Comprar pasaje</button>
+    </form>
+    <div id="mensaje-final"></div>
+    <script src="./main.js"></script>
+  </body>
+</html>
