@@ -1,3 +1,4 @@
+console.log("originalapp.js se ha cargado correctamente");
 // Variables iniciales
 
 let precioZarate = 3500; // Precio desde puntos de partida que incluyen "Zárate"
