@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulador de compra de pasajes</title>
+    <title>Simulador de compra de pasajes de colectivos</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -44,9 +44,25 @@
       esa es la idea, se que falta pulirla bastante, gracias por leer, buena
       semana!saluditos Mel Caffaro.
     </p>
+    <!-- Banner de imágenes -->
+    <div id="banner">
+      <img
+        src="/Users/MAC/OneDrive/Escritorio/primerentrega/.git/rosariopoolbusviajes.jpg"
+        alt="Colectivo"
+        id="colectivo-imagen"
+      />
+      <img
+        src="/Users/MAC/OneDrive/Escritorio/primerentrega/.git/rosariopoolbus1.jpg"
+        alt="Pasaje"
+        id="ticket-image"
+      />
+    </div>
+
+    <!-- Formulario de compra -->
     <form id="formulario-compra">
       <label for="origen">Seleccione su punto de origen:</label>
-      <select id="origen">
+      <select id="origen" required>
+        <option value="">Seleccione origen</option>
         <option>Hospital de Zárate</option>
         <option>Terminal de Zárate</option>
         <option>Zárate calle Mitre y Lavalle</option>
@@ -57,7 +73,8 @@
       </select>
 
       <label for="horario">Seleccione horario del micro:</label>
-      <select id="horario">
+      <select id="horario" required>
+        <option value="">Seleccione horario</option>
         <option>08:00 AM</option>
         <option>12:00 PM</option>
         <option>16:00 PM</option>
@@ -69,7 +86,7 @@
       <input type="number" id="asiento" min="1" max="60" required />
 
       <div id="datos-pasajero">
-        <label for="nombre completo">Nombre y apellido:</label>
+        <label for="nombrecompleto">Nombre y apellido:</label>
         <input type="text" id="nombrecompleto" required />
         <label for="dni">DNI:</label>
         <input type="number" id="dni" required />
@@ -80,14 +97,30 @@
       </div>
 
       <label for="medio-pago">Seleccione medio de pago:</label>
-      <select id="medio-pago">
+      <select id="medio-pago" required>
+        <option value="">Seleccione</option>
         <option>Tarjeta de crédito</option>
         <option>Tarjeta de débito</option>
       </select>
 
+      <!-- Bloque oculto para datos de tarjeta -->
+      <div id="datos-tarjeta" style="display: none">
+        <label for="numero-tarjeta">Número de tarjeta:</label>
+        <input type="text" id="numero-tarjeta" />
+        <label for="nombre-tarjeta">Nombre en la tarjeta:</label>
+        <input type="text" id="nombre-tarjeta" />
+        <label for="vencimiento">Fecha de vencimiento:</label>
+        <input type="month" id="vencimiento" />
+        <label for="clave">Clave de seguridad:</label>
+        <input type="password" id="clave" />
+      </div>
+
       <button type="submit">Comprar pasaje</button>
     </form>
+
+    <!-- Div para mostrar mensaje de confirmación o error -->
     <div id="mensaje-final"></div>
+
     <script src="originalapp.js"></script>
   </body>
 </html>

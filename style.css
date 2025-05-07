@@ -6,30 +6,48 @@ body {
 
 h1 {
   text-align: center;
-  color: #0056b3;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-weight: 300;
+  color: #007bff;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 400;
 }
-
 p {
   text-align: center;
   font-style: oblique;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: #222;
+  margin: 0 auto;
+  max-width: 800px;
 }
+/* Banner de imágenes */
+#banner {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#banner img {
+  max-width: 200px;
+  box-shadow: 0 3px 5px;
+  border: 1px solid, #333;
+  box-shadow: rgba(153, 216, 220, 0.574);
+  margin: 10px;
+  border-radius: 8px;
+}
+
 form {
-  max-width: 400px;
+  max-width: 500px;
   margin: auto;
-  background: #f9f9f9;
+  background-color: #333;
+  color: #f9f9f9c6;
   padding: 20px;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0.1, 0.3);
+  box-shadow: 0 2px 4px rgba(132, 212, 218, 0.458);
 }
 
 label {
   display: block;
   margin: 12px 6px;
+  color: #f9f9f9;
 }
 
 input,
@@ -37,7 +55,11 @@ select,
 button {
   width: 100%;
   padding: 4px;
-  margin-bottom: 4px;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
 button {
@@ -49,4 +71,16 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+/* Mensaje de confirmación o error */
+#mensaje-final {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1rem;
 }
